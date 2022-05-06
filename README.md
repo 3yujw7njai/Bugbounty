@@ -31,3 +31,21 @@
 curl http://host/file.js | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*"*
 
 cat file | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*"*
+
+<h3>CI Bypass</h3>
+<img src="https://github.com/CKevens/Bugbounty/blob/main/CI%20Bypass.png" alt="Image" style="max-width: 100%;" class="">
+
+<h3>查询是否存在heartbleed漏洞</h3>
+cat list.txt | while read line ; do echo "QUIT" | openssl s_client -connect $line:443 2>&1 | grep 'server extension "heartbeat" (id=15)' || echo $line: safe; done
+
+
+<h3>sql注入检测</h3>
+<img src="https://github.com/CKevens/Bugbounty/blob/main/SQL%20injet.png" alt="Image" style="max-width: 100%;" class="">
+
+<h3>favicon信息</h3>
+https://github.com/devanshbatham/FavFreak
+
+>cat urls.txt | python3 favfreak.py -o output
+
+
+
